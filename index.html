@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FF Champs BD - Tournament App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #79c0ff;
+      --dark: #1e293b;
+      --light: #f1f5f9;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+    body{background:var(--light);color:var(--dark);overflow-x:hidden;}
+    @keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
+    .floating-logo{animation:float 3s ease-in-out infinite;width:120px;height:120px;margin:20px auto;
+      background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;
+      filter:drop-shadow(0 10px 15px rgba(37,98,235,0.3));}
+    header{position:fixed;width:100%;background:white;box-shadow:0 5px 20px rgba(0,0,0,0.1);z-index:1000;}
+    nav{max-width:1200px;display:flex;justify-content:space-between;align-items:center;padding:20px 5%;margin:auto;}
+    .logo{font-size:24px;font-weight:700;color:var(--primary);display:flex;align-items:center;}
+    .logo i{margin-right:10px;}
+    .nav-links{display:flex;list-style:none;}
+    .nav-links li{margin-left:30px;}
+    .nav-links a{color:var(--dark);text-decoration:none;font-weight:500;transition:color .3s;}
+    .nav-links a:hover{color:var(--primary);}
+    .btn{background:var(--primary);color:white;padding:12px 30px;border:none;border-radius:50px;
+      font-weight:600;box-shadow:0 5px 15px rgba(37,98,235,0.4);cursor:pointer;transition:all .3s;text-decoration:none;}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(37,98,235,0.6);}
+    .btn-secondary{background:var(--secondary);}
+    .btn-secondary:hover{box-shadow:0 8px 20px rgba(121,192,255,0.6);}
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;padding:150px 5% 80px;background:linear-gradient(to bottom,#f5f7fa,#e4e8f0);}
+    .hero h1{font-size:3rem;margin:20px 0;background:linear-gradient(to right,var(--primary),var(--secondary));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero p{font-size:1.2rem;color:#666;margin-bottom:40px;}
+    .screenshots, .features, .download{padding:100px 5%;}
+    .section-title{max-width:1200px;margin:0 auto 60px;text-align:center;}
+    .section-title h2{font-size:2.5rem;color:var(--dark);margin-bottom:15px;}
+    .section-title p{color:#777;max-width:700px;margin:auto;}
+    .screenshots-grid, .features-grid{display:grid;gap:30px;max-width:1200px;margin:auto;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+    .screenshot-card, .feature-card{background:white;border-radius:20px;overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:all.3s;border:1px solid #eee;}
+    .screenshot-card:hover, .feature-card:hover{transform:translateY(-10px);
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);border-color:var(--primary);}
+    .screenshot-img, .feature-icon{font-size:48px;margin:40px;}
+    .feature-icon {background:transparent;}
+    .download-container{max-width:500px;margin:auto;background:white;border-radius:20px;
+      padding:40px;box-shadow:0 15px 40px rgba(0,0,0,0.2);text-align:center;}
+    .download-btn{display:inline-flex;align-items:center;justify-content:center; background:var(--primary);
+      color:white;padding:20px 40px;border-radius:12px;width:100%;font-size:18px;box-shadow:0 10px 30px rgba(37,98,235,0.4);
+      text-decoration:none;transition:all .3s;}
+    .download-btn:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(37,98,235,0.6);background:#1f4fbb;}
+    .download-btn i{font-size:30px;margin-right:15px;}
+    .download-info p{margin:5px 0;color:var(--dark);font-size:14px;}
+    footer{background:var(--dark);color:white;padding:50px 5%;}
+    .footer-logo{font-size:24px;font-weight:700;margin-bottom:20px;display:block;color:white;}
+    .footer-links, .social-links{display:flex;justify-content:center;list-style:none;margin-bottom:30px;flex-wrap:wrap;}
+    .footer-links li{margin:0 15px;}
+    .footer-links a{color:#bbb;text-decoration:none;transition:color .3s;}
+    .footer-links a:hover{color:white;}
+    .social-links a{display:flex;align-items:center;justify-content:center;width:45px;height:45px;
+      background:rgba(255,255,255,0.1);border-radius:50%;color:white;font-size:18px;transition:all .3s;}
+    .social-links a:hover{background:var(--primary);transform:translateY(-3px);}
+    .copyright{color:#bbb;font-size:14px;border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;}
+  </style>
+</head>
+<body>
+  <header><nav>
+    <a href="#" class="logo"><i class="fas fa-trophy"></i> FF Champs BD</a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#" class="btn">Register Now</a></li>
+    </ul>
+  </nav></header>
+
+  <section class="hero">
+    <div class="floating-logo"><i class="fas fa-trophy"></i></div>
+    <h1>FF Champs BD — Shuru Hoye Geche Joss Battle!</h1>
+    <p>Ekhon Registration Koro — Champion Hoa Somoy!</p>
+    <div class="hero-buttons">
+      <a href="#download" class="btn"><i class="fas fa-download"></i> Download APK</a>
+      <a href="#features" class="btn btn-secondary"><i class="fas fa-star"></i> Features</a>
+    </div>
+  </section>
+
+  <section class="screenshots" id="screenshots">
+    <div class="section-title">
+      <h2>App Screenshots</h2><p>Discover main features and UI of FF Champs BD</p>
+    </div>
+    <div class="screenshots-grid">
+      <div class="screenshot-card"><div class="screenshot-img"><i class="fas fa-gamepad"></i></div><div class="screenshot-info"><h3>Dashboard</h3><p>Quick tournament overview</p></div></div>
+      <div class="screenshot-card"><div class="screenshot-img"><i class="fas fa-users"></i></div><div class="screenshot-info"><h3>Teams</h3><p>Manage your squad easily</p></div></div>
+      <div class="screenshot-card"><div class="screenshot-img"><i class="fas fa-trophy"></i></div><div class="screenshot-info"><h3>Winners</h3><p>View past champions</p></div></div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="section-title"><h2>Features</h2><p>Everything you need to compete and win</p></div>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-brackets-curly"></i></div><h3>Custom Brackets</h3></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-broadcast-tower"></i></div><h3>Live Stream</h3></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-trophy"></i></div><h3>Prize Management</h3></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-users"></i></div><h3>Team Roster</h3></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>Automated Alerts</h3></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-pie"></i></div><h3>Analytics</h3></div>
+    </div>
+  </section>
+
+  <section class="download" id="download">
+    <div class="section-title"><h2>Get the App</h2><p>Download the latest APK version</p></div>
+    <div class="download-container">
+      <a href="#" class="download-btn"><i class="fas fa-download"></i> Download Now</a>
+      <div class="download-info">
+        <p><i class="fas fa-check-circle"></i> Version 1.0.0</p>
+        <p><i class="fas fa-check-circle"></i> Android 8.0+</p>
+        <p><i class="fas fa-check-circle"></i> No ads, no in-app purchases</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="#" class="footer-logo">FF Champs BD</a>
+    <ul class="footer-links"><li><a href="#features">Features</a></li><li><a href="#screenshots">Screenshots</a></li><li><a href="#download">Download</a></li></ul>
+    <div class="social-links"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-discord"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div>
+    <div class="copyright">&copy; 2025 FF Champs BD. All rights reserved.</div>
+  </footer>
+</body>
+</html>
