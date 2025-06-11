@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FF Champs BD</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffffff, #cce5ff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 52px;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 3px 3px #0a0a0a;
+      animation: pulse 2s infinite;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 26px;
+      color: #003366;
+      margin-bottom: 30px;
+    }
+    .logo {
+      width: 150px;
+      height: auto;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    .download-btn {
+      background-color: #0050ff;
+      color: white;
+      padding: 14px 28px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .download-btn:hover {
+      background-color: #003cb3;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); color: #00ccff; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="App Logo" class="logo" />
+  <h1>FF Champs BD — Shuru Hoye Geche Joss Battle!</h1>
+  <p>Ekhon Registration Koro — Champion Hoa Somoy!</p>
+  <a href="#"><button class="download-btn">Download Now</button></a>
+</body>
+</html>
