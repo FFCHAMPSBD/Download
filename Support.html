@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Support – FF CHAMPS BD</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    h1 {
+      color: #2563eb;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    button {
+      background-color: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 1rem;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #1e4fd1;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Support – FF CHAMPS BD</h1>
+    <form action="https://formspree.io/f/mwpbonwj" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="message">Describe Your Issue</label>
+      <textarea name="message" id="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 FF CHAMPS BD. All rights reserved.
+  </div>
+</body>
+</html>
